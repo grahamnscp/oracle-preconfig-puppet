@@ -4,7 +4,7 @@ class oraconf::params (
     # General and Environment
     $oracleVers    = '11.2.0',
     $oracleBase    = '/u01/app/oracle',
-    $oracleHome    = '/u01/app/oracle/product/11.2.0/db',
+    $oracleHome    = '/u01/app/oracle/product/11.2.0',
     $oracleUsrPwd  = 'oracle',
 
     # sysctl.conf
