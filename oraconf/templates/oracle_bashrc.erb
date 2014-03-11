@@ -1,0 +1,22 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific aliases and functions
+alias l='ls -latFrh --color=auto'
+
+export TMP=/tmp
+export TMPDIR=/tmp
+
+export ORACLE_HOSTNAME=<%= @hostname %>.<%= @domain %>
+export ORACLE_UNQNAME=ORCL
+export ORACLE_SID=ORCL
+export ORACLE_BASE=<%= @obase %>
+export ORACLE_HOME=<%= @ohome %>
+
+export PATH=$ORACLE_HOME:/usr/bin:$PATH
+
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
