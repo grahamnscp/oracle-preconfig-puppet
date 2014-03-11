@@ -30,6 +30,8 @@ class oraconf::params (
     $oracleHardNofile = 65536,
     $oracleSoftStack  = 10240,
 
+    $selinuxmode      = permissive
+
   ) {
   # null
 }

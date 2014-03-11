@@ -10,4 +10,5 @@ class oraconf {
 
   include oraconf::packagedeps
 
+  include oraconf::selinux
 }
