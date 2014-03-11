@@ -11,4 +11,6 @@ class oraconf {
   include oraconf::packagedeps
 
   include oraconf::selinux
+
+  include oraconf::iptables
 }
