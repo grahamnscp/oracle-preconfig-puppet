@@ -23,17 +23,16 @@ class oraconf::adduser (
   }
 
   exec { "oracle_homedir":
-    command     => "/bin/cp -R /etc/skel $obase; /bin/chown -R $ouser:$ogroup $obase",
-    creates     => "$obase",
+    command     => "/bin/cp -r /etc/skel/.bash_* $obase; /bin/chown -R $ouser:$ogroup $obase",
     refreshonly => true,
-    require     => User[oracle_user],
+    #require     => User[oracle_user],
   }
 
   file { "oracle_bashrc":
     ensure      => present,
     path        => "$obase/.bashrc",
-    owner       => $uname,
-    group       => $ugroup,
+    owner       => $oname,
+    group       => $ogroup,
     mode        => 0644,
     content     => template("oraconf/oracle_bashrc.erb"),
     require     => Exec['oracle_homedir'],
