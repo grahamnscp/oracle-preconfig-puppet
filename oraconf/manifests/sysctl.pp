@@ -16,6 +16,11 @@ class oraconf::sysctl inherits oraconf::params {
       "set net.core.rmem_max            '${oraconf::params::netCoreRmemMax}'",
       "set net.core.wmem_default        '${oraconf::params::netCoreWmemDefault}'",
       "set net.core.wmem_max            '${oraconf::params::netCoreWmemMax}'",
+      "set vm.swappiness                '${oraconf::params::vmSwappiness}'",
+      "set vm.dirty_background_ratio    '${oraconf::params::vmDirtyBackgroundRatio}'",
+      "set vm.dirty_ratio               '${oraconf::params::vmDirtyRatio}'",
+      "set vm.dirty_exipre_centisecs    '${oraconf::params::vmDirtyExpireCentisecs}'",
+      "set vm.dirty_writeback_centisecs '${oraconf::params::vmDirtyWritebackCentisecs}'",
     ],
     notify => Exec['sysctl_load'],
   }

@@ -22,6 +22,11 @@ class oraconf::params (
     $netCoreRmemMax          = 4194304,
     $netCoreWmemDefault      = 262144,
     $netCoreWmemMax          = 1048586,
+    $vmSwappiness            = 0,                    # default: 60
+    $vmDirtyBackgroundRatio  = 3,
+    $vmDirtyRatio            = 80,                   # default: 20
+    $vmDirtyExpireCentisecs  = 500,                  # default: 3000
+    $vmDirtyWritebackCentisecs = 100,                # default: 500
 
     # limits.conf
     $oracleSoftNproc  = 2047,
