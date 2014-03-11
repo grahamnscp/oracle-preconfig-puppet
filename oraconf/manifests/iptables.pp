@@ -18,7 +18,7 @@ class oraconf::iptables inherits oraconf::params {
   }
 
   exec { "iptables_load":
-    command     => "/sbin/iptables-restore < /etc/iptables.conf",
+    command     => "/sbin/iptables-restore < /etc/iptables.conf ; /sbin/service iptables save",
     refreshonly => true,
     require     => File["iptables_conf"],
     notify      => Service["iptables"],
